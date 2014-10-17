@@ -1,0 +1,19 @@
+header#master-header nav#master-nav ul li a:hover {
+	color: #fff;
+}
+
+.title-custom {
+	margin-left:120px;
+	color:#00a0d1;
+	font-weight: inherit;
+}
+
+header#master-header {
+height: 97px;
+box-shadow: 0px 0px 5px rgb(214, 214, 214);
+}
+
+.pie-pag {
+	margin-left:33px;
+    text-align: center;
+  }

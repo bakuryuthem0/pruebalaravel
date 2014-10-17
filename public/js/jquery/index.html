@@ -1,0 +1,186 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<script language="javascript" type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
+
+<style type="text/css">
+/* SIMLPE CSS RESET */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+	background: transparent;
+}
+body { line-height: 1; }
+ol, ul { list-style: none; }
+blockquote, q { quotes: none; }
+blockquote:before, blockquote:after,
+q:before, q:after { content: ''; content: none; }
+/* remember to define focus styles! */
+:focus { outline: 0; }
+/* remember to highlight inserts somehow! */
+ins { text-decoration: none; }
+del { text-decoration: line-through; }
+/* tables still need 'cellspacing="0"' in the markup */
+table { border-collapse: collapse; border-spacing: 0; }
+/*- -*/
+/*- GENERIC BODY STYLES -*/
+body {
+	font: 12px/18px Arial, Helvetica, sans-serif;
+	color: #333;
+	background: #fff;
+}
+p { margin-bottom: 18px; }
+a { text-decoration: underline; }
+a:hover { text-decoration: none; }
+#container { width: 802px; margin: 0 auto; }
+/*- -*/
+/*- FILTER OPTIONS -*/
+ul#filterOptions {
+	width: 802px;
+	height: 52px;
+	margin: 30px 0;
+	overflow: hidden;
+}
+ul#filterOptions li { height: 52px; margin-right: 2px; float: left; }
+ul#filterOptions li a {
+	height: 50px;
+	padding: 0 20px;
+	border: 1px solid #999;
+	background: #cfcfcf;
+	color: #fff;
+	font-weight: bold;
+	line-height: 50px;
+	text-decoration: none;
+	display: block;
+}
+ul#filterOptions li a:hover { background: #c9c9c9; }
+ul#filterOptions li.active a { background: #999; }
+/*- -*/
+/*- OUR DATA HOLDER -*/
+#ourHolder { width: 800px; height: 850px; overflow: hidden; }
+#ourHolder div.item {
+	width: 200px;
+	height: 200px;
+	float: left;
+	text-align: center;
+}
+#ourHolder div.item h3 { margin-top: 10px; font-size: 16px; line-height: 20px; }
+/*- -*/
+</style>
+
+<script type="text/javascript">
+$(document).ready(function() {
+	$('#filterOptions li a').click(function() {
+		// fetch the class of the clicked item
+		var ourClass = $(this).attr('class');
+		
+		// reset the active class on all the buttons
+		$('#filterOptions li').removeClass('active');
+		// update the active state on our clicked button
+		$(this).parent().addClass('active');
+		
+		if(ourClass == 'all') {
+			// show all our items
+			$('#ourHolder').children('div.item').show();	
+		}
+		else {
+			// hide all elements that don't share ourClass
+			$('#ourHolder').children('div:not(.' + ourClass + ')').hide();
+			// show all elements that do share ourClass
+			$('#ourHolder').children('div.' + ourClass).show();
+		}
+		return false;
+	});
+});
+</script>
+
+<title>Simple data filtering using jQuery</title>
+</head>
+
+<body>
+
+<div id="container">
+  <ul id="filterOptions">
+    <li class="active"><a href="#" class="all">All</a></li>
+    <li><a href="#" class="prem">Premier League</a></li>
+    <li><a href="#" class="champ">Championship</a></li>
+    <li><a href="#" class="league1">League 1</a></li>
+    <li><a href="#" class="league2">League 2</a></li>
+  </ul>
+  
+  <div id="ourHolder">
+    <div class="item league2">
+      <img src="images/accrington-stanley.jpg" alt="Accrington Stanley" />
+      <h3>Accrington Stanley</h3>
+    </div>
+    <div class="item prem">
+      <img src="images/arsenal.jpg" alt="Arsenal" />
+      <h3>Arsenal</h3>
+    </div>
+    <div class="item league2">
+      <img src="images/burton-albion.jpg" alt="Burton Albion" />
+      <h3>Burton Albion</h3>
+    </div>
+    <div class="item champ">
+      <img src="images/cardiff-city.jpg" alt="Cardiff City" />
+      <h3>Cardiff City</h3>
+    </div>
+    <div class="item champ">
+      <img src="images/derby-county.jpg" alt="Derby County" />
+      <h3>Derby County</h3>
+    </div>
+    <div class="item prem">
+      <img src="images/everton.jpg" alt="Everton" />
+      <h3>Everton</h3>
+    </div>
+    <div class="item league2">
+      <img src="images/morecambe.jpg" alt="Morecambe" />
+      <h3>Morecambe</h3>
+    </div>
+    <div class="item champ">
+      <img src="images/norwich-city.jpg" alt="Norwich City" />
+      <h3>Norwich City</h3>
+    </div>
+    <div class="item league1">
+      <img src="images/notts-county.jpg" alt="Notts County" />
+      <h3>Notts County</h3>
+    </div>
+    <div class="item champ">
+      <img src="images/reading.jpg" alt="Reading" />
+      <h3>Reading</h3>
+    </div>
+    <div class="item league1">
+      <img src="images/sheffield-wednesday.jpg" alt="Sheffield Wednesday" />
+      <h3>Sheffield Wednesday</h3>
+    </div>
+    <div class="item prem">
+      <img src="images/sunderland.jpg" alt="Sunderland" />
+      <h3>Sunderland</h3>
+    </div>
+    <div class="item prem">
+      <img src="images/tottenham-hotspur.jpg" alt="Tottenham Hotspur" />
+      <h3>Tottenham Hotspur</h3>
+    </div>
+    <div class="item champ">
+      <img src="images/watford.jpg" alt="Watford" />
+      <h3>Watford</h3>
+    </div>    
+  </div>
+</div>
+
+</body>
+</html>

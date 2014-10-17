@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <title>Prueba</title>
+
+  <link rel="stylesheet" href="css/reset.css">
+
+    <link rel="stylesheet" href="css/style.css" media="screen" type="text/css" />
+
+</head>
+
+<body>
+
+  <div class="controls">
+  <label>Opciones</label>
+
+  <button class="filter" data-filter="all">Todos</button>
+  <button class="filter" data-filter=".category-1">Aragua</button>
+  <button class="filter" data-filter=".category-2">Caracas</button>
+  <button class="filter" data-filter=".category-3">Merida</button>
+
+  <label>Modo</label>
+
+  <button class="sort" data-sort="myorder:asc">Ascendente</button>
+  <button class="sort" data-sort="myorder:desc">Descendente</button>
+</div>
+<div id="Container" class="container">
+  <div class="mix category-1" data-myorder="1"></div>
+  <div class="mix category-1" data-myorder="2"></div>
+  <div class="mix category-1" data-myorder="3"></div>
+  <div class="mix category-1" data-myorder="4"></div>
+  <div class="mix category-1" data-myorder="5"></div>
+  <div class="mix category-2" data-myorder="6"></div>
+  <div class="mix category-2" data-myorder="7"></div>
+  <div class="mix category-2" data-myorder="8"></div>
+  <div class="mix category-3" data-myorder="9"></div>
+  <div class="mix category-3" data-myorder="10"></div>
+  <div class="mix category-3" data-myorder="11"></div>
+
+  <div class="gap"></div>
+  <div class="gap"></div>
+</div>
+
+  <script src='http://codepen.io/assets/libs/fullpage/jquery.js'></script>
+  <script src='http://cdn.jsdelivr.net/jquery.mixitup/latest/jquery.mixitup.min.js?v=2.1.2'></script>
+
+  <script src="js/index.js"></script>
+
+</body>
+
+</html>
