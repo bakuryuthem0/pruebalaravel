@@ -16,4 +16,3 @@ Route::get('estados/{pais}','PaisController@BuscarPais');
 Route::get('continentes/{continente}','ContinenteController@BuscarPaises');
 Route::get('busqueda','BuscadorController@Buscarcosas');
 ?>
-dgadgjadjgdajggjagd
